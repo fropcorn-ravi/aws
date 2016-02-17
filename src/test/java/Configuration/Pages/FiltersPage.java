@@ -1,16 +1,14 @@
 package Configuration.Pages;
 
 import java.util.List;
-
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindAll;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class FiltersPage extends BasePage {
 
 
-	public FiltersPage(AppiumDriver driver) {
+	public FiltersPage(AndroidDriver<MobileElement> driver) {
 	super(driver);
 	// TODO Auto-generated constructor stub
 
@@ -27,24 +25,22 @@ public class FiltersPage extends BasePage {
 	private static MobileElement language;
 
 	
-	
 	public static void filters()
 	{
 		filters.click();
 	}
 	
-	public static List genrelist()
+	public static List<MobileElement> genrelist()
 	{
 		List<MobileElement> genreList = genres.findElementsByClassName("android.widget.TextView");
 		return genreList;
 		
 	}
 	
-	public static List languagelist()
+	public static List<MobileElement> languagelist()
 	{
 		List<MobileElement> languageList = language.findElementsByClassName("android.widget.TextView");
 		return languageList; 
 	}
-	
-	}
+}
 
